@@ -1,0 +1,12 @@
+%%-*- mode: erlang -*-
+{application, foafe,
+ [
+  {description, "foafe"},
+  {vsn, "0.01"},
+  {modules, []},
+  {registered, []},
+  {applications, [
+                  kernel, stdlib, sasl, inets, crypto, mochiweb, webmachine, ibrowse, couchbeam
+                 ]},
+  {env, []}
+ ]}.

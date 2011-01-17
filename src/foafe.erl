@@ -23,6 +23,7 @@ start_link() ->
     application:set_env(webmachine, webmachine_logger_module, 
                         webmachine_logger),
     ensure_started(webmachine),
+    ensure_started(ibrowse),
     ensure_started(couchbeam),
     foafe_sup:start_link().
 
@@ -34,6 +35,7 @@ start() ->
     application:set_env(webmachine, webmachine_logger_module, 
                         webmachine_logger),
     ensure_started(webmachine),
+    ensure_started(ibrowse),
     ensure_started(couchbeam),
     application:start(foafe).
 
@@ -42,6 +44,7 @@ start() ->
 stop() ->
     Res = application:stop(foafe),
     application:stop(couchbeam),
+    application:stop(ibrowse),
     application:stop(webmachine),
     application:stop(mochiweb),
     application:stop(crypto),
